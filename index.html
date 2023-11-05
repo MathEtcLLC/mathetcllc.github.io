@@ -31,6 +31,16 @@
         top: 5px;
         right: 5px;
       }
+      @media (max-width: 575.98px) {
+        .app-switcher-content {
+          display: none;
+        }
+      }
+      @media (min-width: 992px) and (max-width: 1399.98px) {
+        .app-switcher-content {
+          display: none;
+        }
+      }
       .col-one-fifth {
         /* Copied from Bootstrap */
         flex: 0 0 auto;
@@ -156,11 +166,10 @@
             <div class="card-body">
               <h3>Want FREE math game apps?</h3>
               <!-- TODO: Double check the app images on iOS -->
-              <!-- TODO: Turn this into a dropdown and select between Android and iOS -->
-              <button type="button" class="btn btn-light dropdown-toggle app-switcher" data-bs-toggle="dropdown" aria-expanded="false">Device</button>
+              <button type="button" class="btn btn-light dropdown-toggle app-switcher" data-bs-toggle="dropdown" aria-expanded="false"><span class="app-switcher-content">Device</span></button>
               <ul class="dropdown-menu dropdown-menu-end" style="">
-                <li><a class="dropdown-item" href="#">iOS</a></li>
-                <li><a class="dropdown-item" href="#">Android</a></li>
+                <li><a id="show-ios-apps" class="dropdown-item"><i class="bi bi-apple"></i> iOS</a></li>
+                <li><a id="show-android-apps" class="dropdown-item"><i class="bi bi-android2"></i> Android</a></li>
               </ul> 
               <p class="card-text">
                 Practice addition with Teddy Bear Math!
@@ -385,6 +394,14 @@
       }
     }
 
+    function showMiniApps(hideSelector) {
+      for (const miniappsRow of document.getElementsByClassName("miniapps")) {
+        for (const miniapp of miniappsRow.querySelectorAll(hideSelector)) {
+          miniapp.classList.remove("d-none");
+        }
+      }
+    }
+
     let userAgent = navigator.userAgent || navigator.vendor || window.opera;
     if (/android|Linux|Ubuntu/i.test(userAgent)) {
       hideMiniApps(".ios");
@@ -393,5 +410,16 @@
     } else {
       hideMiniApps(".android");
     }
+
+    document.getElementById("show-ios-apps").addEventListener("click", function(e) {
+      e.preventDefault();
+      showMiniApps(".ios");
+      hideMiniApps(".android");
+    });
+    document.getElementById("show-android-apps").addEventListener("click", function(e) {
+      e.preventDefault();
+      showMiniApps(".android");
+      hideMiniApps(".ios");
+    });
   </script>
 </html>
