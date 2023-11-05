@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html class="h-100" lang="en" data-bs-theme="dark">
+  <head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <style>
+      .big-logo {
+        color: #5e5e5e;
+        margin-top: 1em;
+        margin-bottom: 1em;
+        text-align: center;
+      }
+      .big-logo p {
+        /*color: #818181;*/
+        display: inline-block;
+        font-family: "Bookman Old Style",Bookman,"URW Bookman L","Palatino Linotype",serif;
+        font-size: 2.5em;
+        font-weight: 200;
+        line-height: 30px;
+        margin-top: 0.5em;
+        text-transform: uppercase;
+        vertical-align: top;
+      }
+      .vertical-center {
+        position: relative !important;
+        top: 25% !important;
+      }
+      .app-switcher {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+      }
+      .col-one-fifth {
+        /* Copied from Bootstrap */
+        flex: 0 0 auto;
+        width: 20%;
+        /* TODO: Remove padding only for medium-width window */
+        /* TODO: Make these columns the same height */
+      }
+      .miniapp {
+        background-color: black;
+        border: #8a8a8a 1px solid;
+        border-radius: 8px;
+        display: inline-block;
+        max-width: 100%;
+      }
+      .miniapp > .inner {
+        border: #969696 1px solid;
+        border-radius: 7px;
+        padding: 7px;
+        display: block;
+      }
+      .miniapp > a.inner {
+        text-decoration: none;
+      }
+      .miniapp > .inner > .app-icon {
+        border-radius: 16px;
+        max-width: 100%;
+      }
+      .miniapp > .inner > p {
+        border-color: gray;
+        color: white;
+        font-size: 10pt;
+        font-weight: 400;
+        margin-top: 0.5em;
+        margin-right: auto;
+        margin-bottom: 0;
+        margin-left: auto;
+        max-width: 100px;
+        text-align: center;
+      }
+      .theme-switcher {
+        position: absolute;
+        top: 0.5rem;
+        right: 0.5rem;
+      }
+    </style>
+  </head>
+  <body class="h-100 py-5">
+    <div class="theme-switcher">
+      <button id="theme-switcher-btn" class="btn btn-outline-light"><i id="theme-switcher-btn-icon" class="bi bi-sun"></i></button>
+    </div>
+
+    <div class="container mb-5 text-center">
+      <div class="row">
+        <div class="col-12">
+          <h1>Math ETC LLC</h1>
+          <h2>Helping students move from "I don't get it" to "I got it!"</h2>
+        </div>
+      </div>
+    </div>
+
+    <div class="container text-center">
+      <div class="row h-50">
+        <div class="col-12 col-lg-6 my-2">
+          <div class="card h-100 text-bg-light">
+            <title>Need some FREE practice?</title>
+            <div class="card-body">
+              <h3>Need some FREE practice?</h3>
+              <p>
+                <a class="btn btn-primary stretched-link" href="https://www.monumentalmath.com">
+                Visit my website
+                </a>
+              </p>
+              <div class="big-logo text-bg-light">
+                <img src="https://www.monumentalmath.com/static/img/M-title.png">
+                <p id="title" class="text-center">Monumental Math</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-lg-6 my-2">
+          <div class="card h-100 text-bg-success">
+            <title>Need extra help or tutoring?</title>
+            <div class="card-body p-relative">
+              <h3>Need extra help or tutoring?</h3>
+              <h5 class="card-text">
+                In-person or online
+              </h5>
+              <p>
+                <a class="btn btn-light" href="https://monumentalmath.com/contact/">Fill out this form to get started</a>
+              </p>
+
+              <h3 class="mt-5">Need worksheets or activities?</h3>
+              <h5 class="card-text">
+                <a class="btn btn-light" href="">Visit my account on TeachersPayTeachers.com</a>
+              </h5>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row h-50">
+        <div class="col-12 col-lg-6 my-2">
+          <div class="card h-100 text-bg-danger">
+            <title>Need videos to explain topics?</title>
+            <div class="card-body">
+              <h3>Need videos to explain topics?</h3>
+              <p class="card-text">
+                See my Math, Algebra & Geometry videos on YouTube!
+              </p>
+              <p class="card-text">
+                <a class="btn btn-dark stretched-link" href="https://www.youtube.com/@maryannmonumentalmath9155/videos">
+                  <img alt="Mary Ann Teaching in YouTube videos" src="https://i3.ytimg.com/vi/L6_Qnz_A0N4/maxresdefault.jpg" style="max-width: 100%; max-height: 100%;" />
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-lg-6 my-2">
+          <div class="card h-100 text-bg-primary">
+            <title>Want FREE math game apps?</title>
+            <div class="card-body">
+              <h3>Want FREE math game apps?</h3>
+              <!-- TODO: Double check the app images on iOS -->
+              <!-- TODO: Turn this into a dropdown and select between Android and iOS -->
+              <button type="button" class="btn btn-light dropdown-toggle app-switcher" data-bs-toggle="dropdown" aria-expanded="false">Device</button>
+              <ul class="dropdown-menu dropdown-menu-end" style="">
+                <li><a class="dropdown-item" href="#">iOS</a></li>
+                <li><a class="dropdown-item" href="#">Android</a></li>
+              </ul> 
+              <p class="card-text">
+                Practice addition with Teddy Bear Math!
+              </p>
+              <div class="row miniapps">
+                <div class="col-6 android">
+                  <div class="miniapp">
+                    <a class="inner" href="https://play.google.com/store/apps/details?id=com.monumentalmath.teddybearmathaddition">
+                        <img class="app-icon" src="https://monumentalmath.com/static/img/TeddyBearMath-Addition-Android-100x100.png">
+                        <p>
+                          Addition
+                        </p>
+                    </a><!-- .inner -->
+                  </div><!-- .miniapp -->
+                </div>
+                <div class="col-one-fifth ios">
+                  <div class="miniapp">
+                    <a class="inner" href="https://itunes.apple.com/us/app/teddy-bear-math-addition/id1276056894">
+                        <img class="app-icon" src="https://monumentalmath.com/static/img/TeddyBearMath-Addition-Android-100x100.png">
+                        <p>
+                          Addition
+                        </p>
+                    </a><!-- .inner -->
+                  </div><!-- .miniapp -->
+                </div>
+
+                <div class="col-6 android">
+                  <div class="miniapp">
+                    <a class="inner" href="https://play.google.com/store/apps/details?id=com.monumentalmath.teddybeardoubles">
+                        <img class="app-icon" src="https://monumentalmath.com/static/img/TeddyBearMath-Doubles-Android-100x100.png">
+                        <p>
+                          Doubles
+                        </p>
+                    </a><!-- .inner -->
+                  </div><!-- .miniapp -->
+                </div>
+                <div class="col-one-fifth ios">
+                  <div class="miniapp">
+                    <a class="inner" href="https://apps.apple.com/us/app/teddy-bear-math-doubles/id1366678940">
+                        <img class="app-icon" src="https://monumentalmath.com/static/img/TeddyBearMath-Doubles-Android-100x100.png">
+                        <p>
+                          Doubles
+                        </p>
+                    </a><!-- .inner -->
+                  </div><!-- .miniapp -->
+                </div>
+
+                <div class="col-one-fifth ios">
+                  <div class="miniapp">
+                    <a class="inner" href="https://itunes.apple.com/us/app/teddy-bear-math-add-to-50/id1364787961">
+                        <img class="app-icon" src="https://monumentalmath.com/static/img/TeddyBearMath-AddTo100-Android-100x100.png">
+                        <p>
+                          Add To 50
+                        </p>
+                    </a><!-- .inner -->
+                  </div><!-- .miniapp -->
+                </div>
+
+                <!--
+                <div class="col-4 android">
+                  <div class="miniapp">
+                    <a class="inner" href="https://play.google.com/store/apps/details?id=com.monumentalmath.teddybearmathhundreds">
+                        <img class="app-icon" src="https://monumentalmath.com/static/img/TeddyBearMath-AddTo100-Android-100x100.png">
+                        <p>
+                          Add To 100
+                        </p>
+                    </a>
+                  </div>
+                </div>
+                -->
+                <div class="col-one-fifth ios">
+                  <div class="miniapp">
+                    <a class="inner" href="https://itunes.apple.com/us/app/teddy-bear-math-add-to-100/id1364787967">
+                        <img class="app-icon" src="https://monumentalmath.com/static/img/TeddyBearMath-Doubles-Android-100x100.png">
+                        <p>
+                          Add to 100
+                        </p>
+                    </a><!-- .inner -->
+                  </div><!-- .miniapp -->
+                </div>
+
+                <div class="col-one-fifth ios">
+                  <div class="miniapp">
+                    <a class="inner" href="https://apps.apple.com/us/app/teddy-bear-math-tibiri/id1366679877">
+                        <img class="app-icon" src="https://monumentalmath.com/static/img/TeddyBearMath-AddTo100-Android-100x100.png">
+                        <p>
+                          TIBIRI
+                        </p>
+                    </a><!-- .inner -->
+                  </div><!-- .miniapp -->
+                </div>
+              </div>
+
+              <hr />
+
+              <p class="card-text">
+                Practice fractions with Hopscotch Math!
+              </p>
+              <div class="row miniapps">
+                <div class="col-4 android">
+                  <div class="miniapp">
+                    <a class="inner" href="https://play.google.com/store/apps/details?id=com.hopscotch.fractionapp">
+                      <img class="app-icon" src="https://monumentalmath.com/static/img/Hopscotch-Simplify_Fractions-Android-100x100.jpg">
+                      <p>
+                        Simplify Fractions
+                      </p>
+                    </a><!-- .inner -->
+                  </div><!-- .miniapp -->
+                </div>
+                <div class="col-4 ios">
+                  <div class="miniapp">
+                    <a class="inner" href="https://itunes.apple.com/us/app/hopscotch-simplifying-fractions/id1133020749">
+                      <img class="app-icon" src="https://monumentalmath.com/static/img/Hopscotch-Simplify_Fractions-Android-100x100.jpg">
+                      <p>
+                        Simplify Fractions
+                      </p>
+                    </a><!-- .inner -->
+                  </div><!-- .miniapp -->
+                </div>
+
+                <div class="col-4 android">
+                  <div class="miniapp">
+                    <a class="inner" href="https://play.google.com/store/apps/details?id=com.hopscotch.hopscotchmathaddition">
+                      <img class="app-icon" src="https://monumentalmath.com/static/img/Hopscotch-Adding_Fractions-Android-100x100.png">
+                      <p>
+                        Adding Fractions
+                      </p>
+                    </a><!-- .inner -->
+                  </div><!-- .miniapp -->
+                </div>
+                <div class="col-4 ios">
+                  <div class="miniapp">
+                    <a class="inner" href="https://itunes.apple.com/us/app/hopscotch-adding-fractions/id1143324135">
+                      <img class="app-icon" src="https://monumentalmath.com/static/img/Hopscotch-Adding_Fractions-Android-100x100.png">
+                      <p>
+                        Adding Fractions
+                      </p>
+                    </a><!-- .inner -->
+                  </div><!-- .miniapp -->
+                </div>
+
+                <div class="col-4 android">
+                  <div class="miniapp">
+                    <a class="inner" href="https://play.google.com/store/apps/details?id=com.hopscotch.mutifraction">
+                      <img class="app-icon" src="https://monumentalmath.com/static/img/Hopscotch-Multiply_Fractions-Android-100x100.png">
+                      <p>
+                        Multiply Fractions
+                      </p>
+                    </a><!-- .inner -->
+                  </div><!-- .miniapp -->
+                </div>
+                <div class="col-4 ios">
+                  <div class="miniapp">
+                    <a class="inner" href="https://itunes.apple.com/us/app/hopscotch-multiplying-fractions/id1144006582">
+                      <img class="app-icon" src="https://monumentalmath.com/static/img/Hopscotch-Multiply_Fractions-Android-100x100.png">
+                      <p>
+                        Multiply Fractions
+                      </p>
+                    </a><!-- .inner -->
+                  </div><!-- .miniapp -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    function setDarkTheme(el) {
+      let btn = document.getElementById("theme-switcher-btn");
+      let btnIcon = document.getElementById("theme-switcher-btn-icon");
+
+      els = el ? [el] : document.getElementsByTagName("html");
+      for (const el of els) {
+        el.setAttribute("data-bs-theme", "dark");
+        btn.classList.remove("btn-outline-dark");
+        btn.classList.add("btn-outline-light");
+        btnIcon.classList.remove("bi-moon-fill")
+        btnIcon.classList.add("bi-sun");
+      }
+    }
+    function setLightTheme(el) {
+      let btn = document.getElementById("theme-switcher-btn");
+      let btnIcon = document.getElementById("theme-switcher-btn-icon");
+
+      els = el ? [el] : document.getElementsByTagName("html");
+      for (const el of els) {
+        el.setAttribute("data-bs-theme", "light");
+        btn.classList.remove("btn-outline-light");
+        btn.classList.add("btn-outline-dark");
+        btnIcon.classList.remove("bi-sun")
+        btnIcon.classList.add("bi-moon-fill");
+      }
+    }
+
+    // Try to pull the user's preferences from the CSS media
+    (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ?
+      setDarkTheme()
+    :
+      setLightTheme();
+
+    // Setup event handler for dark/light theme selector button
+    document.getElementById("theme-switcher-btn").addEventListener("click", function () {
+      for (const el of document.getElementsByTagName("html")) {
+        let current = el.getAttribute("data-bs-theme");
+
+        if (current == "light") {
+          setDarkTheme(el);
+        } else if (current == "dark") {
+          setLightTheme(el);
+        }
+      }
+    });
+
+    // Only show apps that match the user's platform/hardware
+    function hideMiniApps(hideSelector) {
+      for (const miniappsRow of document.getElementsByClassName("miniapps")) {
+        for (const miniapp of miniappsRow.querySelectorAll(hideSelector)) {
+          miniapp.classList.add("d-none");
+        }
+      }
+    }
+
+    let userAgent = navigator.userAgent || navigator.vendor || window.opera;
+    if (/android|Linux|Ubuntu/i.test(userAgent)) {
+      hideMiniApps(".ios");
+    } else if (/iPad|iPhone|iPod|mac\s*OS/i.test(userAgent)) {
+      hideMiniApps(".android");
+    } else {
+      hideMiniApps(".android");
+    }
+  </script>
+</html>
